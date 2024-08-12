@@ -1,0 +1,84 @@
+GET http://localhost:4004/catalog
+###
+GET http://localhost:4004/catalog/$metadata
+###
+GET http://localhost:4004/catalog/Sales
+###
+POST http://localhost:4004/catalog/Sales(1)
+Content-Type: application/json
+
+{}
+
+
+###
+PUT http://localhost:4004/catalog/UpdateCustomers(ID=1,email='partha@acloudguruji.com')
+Content-Type: application/json
+
+{
+"ID": 1,
+"email": "partha@acloudguruji.com",
+"firstName": "Partha Goswami",
+"lastName": "Goswami",
+"city": "Kolkata"
+}
+
+###
+POST http://localhost:4004/catalog/InsertCustomers
+Content-Type: application/json
+
+{
+    "ID": 6,
+    "email": "666@gmail.com",
+    "firstName": "Mr. PS",
+    "lastName": "Goswami",
+    "city": "Pune"    
+}
+
+
+###
+DELETE http://localhost:4004/catalog/DeleteCustomers(ID=5,email='5555@gmail.com')
+Content-Type: application/json
+
+{
+    "ID": 5,
+    "email": "5555@gmail.com",
+    "firstName": "Mr. PS",
+    "lastName": "Goswami",
+    "city": "Pune"    
+}
+
+
+###
+POST http://localhost:4004/computer-shop/deepInsert
+Content-Type: application/json
+
+{
+    "data": [
+        {
+        "ordID": 1,
+        "orddate": "2023-10-10",
+        "netPrice": 220,
+        //"customer": 1,
+        "items": [{
+            //"orderID": 1,
+            "itemID": 10,
+            "itemName": "Lenovo COmputer",
+            "itemPrice" : 100,
+             "computer_comID" : 1002
+        },
+        {
+            //"orderID": 1,
+            "itemID": 20,
+            "itemName": "Apple COmputer",
+            "itemPrice" : 120,
+             "computer_comID" : 1003
+        }]
+        }
+    ]
+}
+
+
+
+###
+GET http://localhost:4004/catalog/topSales(amount=700)
+###
